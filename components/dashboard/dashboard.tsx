@@ -97,6 +97,7 @@ export default function Dashboard() {
     try {
       const formData = new FormData()
       formData.append("dataset", file)
+      formData.append("model_name", selectedModel)
 
       const response = await fetch(`https://a6e9-130-207-126-160.ngrok-free.app/upload_dataset`, {
         method: "POST",
