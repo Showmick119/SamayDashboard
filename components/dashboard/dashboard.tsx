@@ -70,7 +70,7 @@ export default function Dashboard() {
     setIsLoadingModel(true)
 
     try {
-      const response = await fetch(`https://2e76-130-207-126-160.ngrok-free.app/load_model`, {
+      const response = await fetch(`https://9427-130-207-126-160.ngrok-free.app/load_model`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model_name: selectedModel }),
@@ -107,7 +107,7 @@ export default function Dashboard() {
       formData.append("dataset", file)
       formData.append("model_name", selectedModel)
 
-      const response = await fetch(`https://2e76-130-207-126-160.ngrok-free.app/upload_dataset`, {
+      const response = await fetch(`https://9427-130-207-126-160.ngrok-free.app/upload_dataset`, {
         method: "POST",
         body: formData,
       })
@@ -144,7 +144,7 @@ export default function Dashboard() {
     setIsFinetuning(true)
 
     try {
-      const response = await fetch(`https://2e76-130-207-126-160.ngrok-free.app/finetune`, {
+      const response = await fetch(`https://9427-130-207-126-160.ngrok-free.app/finetune`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model_name: selectedModel, dataset_name: "uploaded" }),
@@ -181,7 +181,7 @@ export default function Dashboard() {
     setIsGeneratingPlot(true)
 
     try {
-      const response = await fetch(`https://2e76-130-207-126-160.ngrok-free.app/run_inference`, {
+      const response = await fetch(`https://9427-130-207-126-160.ngrok-free.app/run_inference`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model_name: selectedModel, dataset_name: "uploaded" }),
