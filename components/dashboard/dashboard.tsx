@@ -36,10 +36,18 @@ export default function Dashboard() {
     setErrorMessage(null)
   }
 
+  const resetDashboard = () => {
+    clearMessages()
+    setUploadedFile(null)      // clear the file selection
+    setPlotUrl(null)           // hide any existing plot
+    setIsModelLoaded(false)    // mark model as “not yet loaded”
+    setIsDataLoaded(false)     // mark data as “not yet uploaded”
+  }
+
   // Handle model selection
   const handleModelSelect = (model: string) => {
+    resetDashboard()
     setSelectedModel(model)
-    clearMessages()
   }
 
   // Handle file upload selection and trigger upload
@@ -210,7 +218,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row gap-6">
-        <Card className="w-full md:w-1/2">
+        <Card className="w-full md:w-1/2 transition-opacity duration-500 ease-in-out">
           <CardHeader>
             <CardTitle>Model Selection</CardTitle>
             <CardDescription>Choose a time-series forecasting model</CardDescription>
@@ -232,7 +240,7 @@ export default function Dashboard() {
             <CardDescription>Upload your time-series CSV data</CardDescription>
           </CardHeader>
           <CardContent>
-            <DataUploader onUpload={handleDatasetUpload} isUploading={isUploading} />
+            <DataUploader key={selectedModel} onUpload={handleDatasetUpload} isUploading={isUploading} />
           </CardContent>
           <CardFooter className="flex justify-between">
             <Button
@@ -275,7 +283,7 @@ export default function Dashboard() {
 
       {/* Plot Display */}
       {plotUrl ? (
-        <Card>
+        <Card className="transition-opacity duration-500 ease-in-out">
           <CardHeader>
             <CardTitle>Forecast Results</CardTitle>
             <CardDescription>Time-series forecast visualization</CardDescription>
@@ -289,7 +297,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       ) : (
-        <Card>
+        <Card className="transition-opacity duration-500 ease-in-out">
           <CardContent className="pt-6 pb-6">
             <div className="flex flex-col items-center justify-center text-center space-y-4">
               <div className="bg-muted rounded-full p-3">
