@@ -84,7 +84,7 @@ POST /run_inference
 
 ## Implementation Details
 
-The backend is implemented as a Flask API with CORS support, specifically configured to work with the frontend hosted at `https://showmick119.github.io`. The API communicates with the models and datasets stored on an NVIDIA DGX server.
+The backend is implemented as a Flask API with CORS support, specifically configured to work with the frontend hosted at `samay-dashboard.vercel.app`. The API communicates with the models and datasets stored on an NVIDIA DGX server.
 
 ### Model Support
 
