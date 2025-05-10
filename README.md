@@ -1,6 +1,6 @@
 # Samay Dashboard
 
-A powerful interactive dashboard for time-series forecasting using state-of-the-art foundational models.
+An interactive dashboard for time-series forecasting using state-of-the-art foundational models.
 
 ## Overview
 
@@ -102,4 +102,4 @@ The system generates visualizations that show:
 
 ## Research Background
 
-This project implements the models and methods described in [Large Pre-trained Time-Series Models](https://arxiv.org/abs/2311.11413). The LPTM model forms the core of our forecasting capabilities, with other models included primarily for benchmarking and performance comparison.
+This project implements and uses the models and methods described in [Large Pre-trained Time-Series Models](https://arxiv.org/abs/2311.11413). The LPTM model forms the core of our forecasting capabilities, with other models included primarily for benchmarking and performance comparison.
