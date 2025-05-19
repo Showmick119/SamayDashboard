@@ -23,7 +23,7 @@ The dashboard provides a comprehensive interface to:
 The system consists of two main components:
 
 1. **Frontend Dashboard**: A user-friendly interface for interacting with the models
-2. **Backend API**: A Flask-based RESTful API that handles model operations on an NVIDIA DGX server
+2. **Backend API**: A Flask-based RESTful API that handles model operations on a private NVIDIA DGX server
 
 ### Backend API
 
